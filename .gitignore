@@ -1,0 +1,6 @@
+.idea/**/*
+.DS_Store
+*.xml
+*.iml
+node_modules
+dist
