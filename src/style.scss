@@ -1,0 +1,11 @@
+@import "reset";
+@import "mixins";
+@import "variables";
+@import "common";
+
+
+@import "./01_hero/hero";
+@import "./02_slogan/slogan";
+@import"./03_features/features";
+@import "./04_testimonials/testimonials";
+@import "./05_pricing/pricing";
