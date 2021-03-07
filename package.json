@@ -1,0 +1,19 @@
+{
+  "name": "step-project-forkio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/kostynd2004/step-project-forkio.git"
+  },
+  "author": "Kostia Doichev, Anton Molchanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/kostynd2004/step-project-forkio/issues"
+  },
+  "homepage": "https://gitlab.com/kostynd2004/step-project-forkio#readme"
+}
