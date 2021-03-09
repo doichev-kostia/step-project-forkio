@@ -26,42 +26,35 @@ let paths = {
     clean: project_folder
 }
 
-let { src, dest  } = require('gulp'),
-gulp = require('gulp'),
+let {src, dest} = require('gulp'),
+    gulp = require('gulp'),
     concat = require("gulp-concat"),
-
     browsersync = require("browser-sync").create(),
-fileinclude = require('gulp-file-include'),
-del = require('del'),
-scss = require('gulp-sass'),
-autoprefixer = require('gulp-autoprefixer'),
+    fileinclude = require('gulp-file-include'),
+    del = require('del'),
+    scss = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
 // group_media = require('gulp-group-css-media-queries'),
 // cleancss = require('gulp-clean-css'),
-uglify = require('gulp-uglify'),
-imagemin = require('gulp-imagemin')
-webp = require('gulp-webp'),
-webphtml = require('gulp-webp-html'),
-webpcss = require('gulp-webp-css')
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    webp = require('gulp-webp'),
+    webphtml = require('gulp-webp-html'),
+    webpcss = require('gulp-webp-css');
+
+scss.compiler = require("node-sass");
 
 /*** FUNCTIONS ***/
 
-function browserSync() {
-    browsersync.init({
-        server:{
-            baseDir: "./" + project_folder + "/"
-        },
-        port: 3000,
-        notify: false
-    })
-}
 
-function html(){
-    return src(paths.src.html)
-    .pipe(fileinclude())
-    .pipe(webphtml())
-    .pipe(dest(paths.build.html))
-    .pipe(browsersync.stream())
-}
+
+// function html(){
+//     return src(paths.src.html)
+//     .pipe(fileinclude())
+//     .pipe(webphtml())
+//     .pipe(dest(paths.build.html))
+//     .pipe(browsersync.stream())
+// }
 function css() {
     return src(paths.src.scss, { allowEmpty: true })
     .pipe(
@@ -123,28 +116,26 @@ function images(){
     .pipe(browsersync.stream())
 }
 
-
-function watchFiles(){
-    gulp.watch([paths.watch.html], html);
-    gulp.watch([paths.watch.css], css);
-    gulp.watch([paths.watch.js], js);
-    gulp.watch([paths.watch.img], images);
-
-}
-
 function clean(){
     return del(paths.clean);
 }
 
 
-let build = gulp.series(clean, gulp.parallel(js,css,html, images));
-let watch = gulp.parallel(build, watchFiles, browserSync);
+let build = gulp.series(js, css);
 
+function browserSync() {
+    browsersync.init({
+        server:{
+            baseDir: "./"
+        },
+        port: 3000,
+        notify: false
+    })
+    gulp.watch(paths.src.scss, css).on("change", browsersync.reload)
+    gulp.watch(paths.src.js, js).on("change", browsersync.reload)
+    gulp.watch(paths.src.img, images).on("change", browsersync.reload)
+    gulp.watch(paths.src.html, build).on("change", browsersync.reload)
 
-exports.images = images;
-exports.js = js;
-exports.css = css;
-exports.html = html;
-exports.build = build;
-exports.watch = watch;
-exports.default = watch;
+}
+
+gulp.task("default", gulp.series(clean, gulp.parallel(build, images), browserSync))
