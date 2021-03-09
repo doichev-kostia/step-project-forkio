@@ -1,55 +1,51 @@
-let project_folder = 'dist';
-let source_folder = '#src';
+let project_folder = './dist';
+let source_folder = './src';
 
 
 let paths = {
     build: {
-        html: project_folder + "/",
+        html: "./index.html",
         css: project_folder + "/css/",
         js: project_folder + "/js/",
         img: project_folder + "/img/",
         fonts: project_folder + "/fonts/",
     },
     src: {
-        html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
-        css: source_folder + "/scss/style.scss",
-        js: source_folder + "/js/script.js",
-        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        fonts: source_folder + "/fonts/*.ttf",
+        html: "./index.html",
+        scss: source_folder + "/**/*.scss",
+        js: source_folder + "/**/*.js",
+        img: source_folder + "/**/*.{jpg,png,svg,gif,ico,webp}",
+        fonts: source_folder + "/fonts/**/*.{ttf,eot,svg,woff,woff2}",
     },
     watch: {
-        html: source_folder + "/**/*.html",
-        css: source_folder + "/scss/**/.*scss",
-        js: source_folder + "/js/**/*.js",
-        img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        html: "./index.html",
+        scss: source_folder + "/**/*.scss",
+        js: source_folder + "/**/*.js",
+        img: source_folder + "/**/*.{jpg,png,svg,gif,ico,webp}",
     },
-    clean: "./" + project_folder + "/"
+    clean: project_folder
 }
 
 let { src, dest  } = require('gulp'),
 gulp = require('gulp'),
-browsersync = require("browser-sync").create(),
+    concat = require("gulp-concat"),
+
+    browsersync = require("browser-sync").create(),
 fileinclude = require('gulp-file-include'),
 del = require('del'),
 scss = require('gulp-sass'),
-debug = require('gulp-debug'),
-filter = require('gulp-filter'),
 autoprefixer = require('gulp-autoprefixer'),
-group_media = require('gulp-group-css-media-queries'),
-cleancss = require('gulp-clean-css'),
-rename = require("gulp-rename"),
+// group_media = require('gulp-group-css-media-queries'),
+// cleancss = require('gulp-clean-css'),
 uglify = require('gulp-uglify'),
-imagemin = require('gulp-imagemin'),
+imagemin = require('gulp-imagemin')
 webp = require('gulp-webp'),
 webphtml = require('gulp-webp-html'),
-webpcss = require('gulp-webp-css'),
-svgSprite = require('gulp-svg-sprite');
-
-
+webpcss = require('gulp-webp-css')
 
 /*** FUNCTIONS ***/
 
-function browserSync(){
+function browserSync() {
     browsersync.init({
         server:{
             baseDir: "./" + project_folder + "/"
@@ -67,25 +63,25 @@ function html(){
     .pipe(browsersync.stream())
 }
 function css() {
-    return src(paths.src.css, { allowEmpty: true })
+    return src(paths.src.scss, { allowEmpty: true })
     .pipe(
         scss({
             outputStyle: "expanded"
         })
     )
+        .pipe(scss().on("error", scss.logError))
+        .pipe(concat("style.min.css"))
     .pipe(
         autoprefixer({
             overrideBrowserslist: ["last 5 versions"],
             cascade: true
         })
     )
-    .pipe(
-        group_media()
-    )
-    .pipe(webpcss())
-    .pipe(dest(paths.build.css))
-    .pipe(cleancss())
-    .pipe(rename({extname: ".min.css"}))
+        // .pipe(
+    //     group_media()
+    // )
+    // .pipe(webpcss())
+    // .pipe(cleancss())
     .pipe(dest(paths.build.css))
     .pipe(browsersync.stream())
 }
@@ -93,27 +89,23 @@ function css() {
 function js(){
     return src(paths.src.js, { allowEmpty: true })
     .pipe(fileinclude())
-    .pipe(dest(paths.build.js))
-    .pipe(
-        uglify()
-    )
-    .pipe(
-        rename({
-            extname: ".min.js"
-        })
-    )
+    // .pipe(
+    //     uglify()
+    // )
+        // .pipe(minifyJs())
+        .pipe(concat("script.min.js"))
     .pipe(dest(paths.build.js))
     .pipe(browsersync.stream())
 }
 
 function images(){
     return src(paths.src.img)
-    .pipe(
-        webp({
-            quality: 70
-        })
-    )
-    .pipe(dest(paths.build.img))
+    // .pipe(
+    //     webp({
+    //         quality: 70
+    //     })
+    // )
+    // .pipe(dest(paths.build.img))
     .pipe(src(paths.src.img))
     .pipe(
         imagemin({
@@ -130,22 +122,6 @@ function images(){
     .pipe(dest(paths.build.img))
     .pipe(browsersync.stream())
 }
-
-
-gulp.task('svgSprite', function(){
-    return gulp.src([source_folder + '/iconsprite/*.svg'])
-    .pipe(svgSprite({
-        mode: {
-            stack: {
-                sprite: "../icons/icons.svg", //sprite file name
-                exmple: true
-            }
-        },
-    }
-    ))
-    .pipe(dest(paths.build.img))
-})
-
 
 
 function watchFiles(){
