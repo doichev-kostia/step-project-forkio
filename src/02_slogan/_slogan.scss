@@ -1,5 +1,6 @@
 .slogan{
-  padding-top: 79px;
+  padding-top: 52px;
+  padding-bottom: 88px;
 
   &__title{
     padding-bottom: 27px;
@@ -20,6 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 36px;
   }
 }
 
@@ -35,19 +37,25 @@
 
   &__button{
     position: relative;
-    border: 1px solid #d9dbdb;
+    border: transparent;
+    border-right: 1px solid #d9dbdb;
     height: 100%;
+
+    &:hover{
+      background-color: #1b1f2326;
+      transition: all .2s ease;
+    }
 
     span{
         position: relative;
-        top: calc(50% - (16px / 2));
+        bottom: 1px;
         color: #24292e;
       }
     }
 
   &__svg{
     position: relative;
-    top: calc(50% - (16px / 2));
+    top: 2px;
   }
 
   &__description{
@@ -56,5 +64,15 @@
 
   &__social-count{
     color: #24292e;
+    text-align: center;
+    position: relative;
+    bottom: 2px;
+    left: 3px;
+
+    &:hover{
+      color: #0366d6;
+    }
   }
 }
+
+@import "media";
