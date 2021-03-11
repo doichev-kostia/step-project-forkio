@@ -46,6 +46,13 @@ scss.compiler = require("node-sass");
 
 /*** FUNCTIONS ***/
 
+function clean(){
+    return del(paths.clean);
+}
+function fonts(){
+    return gulp.src(paths.src.fonts)
+        .pipe(gulp.dest(paths.build.fonts))
+}
 
 
 // function html(){
@@ -55,6 +62,7 @@ scss.compiler = require("node-sass");
 //     .pipe(dest(paths.build.html))
 //     .pipe(browsersync.stream())
 // }
+
 function css() {
     return src(paths.src.scss, { allowEmpty: true })
     .pipe(
@@ -116,11 +124,6 @@ function images(){
     .pipe(browsersync.stream())
 }
 
-function clean(){
-    return del(paths.clean);
-}
-
-
 let build = gulp.series(js, css);
 
 function browserSync() {
@@ -138,4 +141,4 @@ function browserSync() {
 
 }
 
-gulp.task("default", gulp.series(clean, gulp.parallel(build, images), browserSync))
+gulp.task("default", gulp.series(clean, fonts, gulp.parallel(build, images), browserSync))
