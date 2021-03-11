@@ -10,24 +10,7 @@
   display: flex;
   align-items: center;
 }
-.btn{
-  background-color: $btn-color;
-  box-sizing: border-box;
-  padding-right: 11px;
-  padding-left: 11px;
-  padding-top: 11px;
-  padding-bottom: 11px;
-  max-width: 119px;
-  border-radius: 40px;
-  text-align: center;
-  text-decoration: none;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 15px;
-  line-height: 15px;
-  color: #FFFFFF;
-}
+
 .btn-buy{
   min-width: 119px;
 }

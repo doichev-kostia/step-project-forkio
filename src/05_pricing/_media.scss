@@ -1,0 +1,40 @@
+@media (min-width: 481px ) {
+  .pricing{
+    padding-top: 88px;
+    padding-bottom: 23px;
+
+    &__title{
+      font-size: 42px;
+      line-height: 44px;
+      padding-bottom: 39px;
+    }
+
+    &__offers{
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(257px,1fr));
+      grid-gap: 30px 25px;
+      align-items: center;
+    }
+  }
+
+  .pricing-plan{
+
+    &__item{
+      height: 490px;
+    }
+
+
+    &__item--large{
+      height: 560px;
+    }
+  }
+
+
+}
+
+
+
+
+@media (min-width: 993px) {
+
+}
