@@ -1,11 +1,10 @@
-
 .wrapper{
   padding-left: 25px;
   padding-right: 25px;
 }
 
 .section-title{
-  font-family: "Montserrat", sans-serif;
+  font-family: $heading-font;
   font-weight: bold;
   text-align: center;
 }
@@ -20,4 +19,17 @@ a{
 
 button{
   outline: none;
+}
+
+@media (min-width: 481px ) {
+
+}
+
+@media (min-width: 993px) {
+  .wrapper{
+    max-width: 1200px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 0 auto;
+  }
 }
