@@ -18,15 +18,20 @@
   "homepage": "https://gitlab.com/kostynd2004/step-project-forkio#readme",
   "devDependencies": {
     "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.3.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-js-minify": "^0.0.3",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-css": "^1.1.0",
+    "gulp-webp-html": "^1.0.2",
     "node-sass": "^5.0.0"
   }
 }
