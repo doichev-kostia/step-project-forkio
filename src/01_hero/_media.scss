@@ -1,0 +1,123 @@
+@media  (min-width: 481px){
+  .hero__burger{
+    display: none;
+  }
+  .hero__body{
+    padding-top: 22px;
+    justify-content: space-between;
+  }
+  .hero-menu{
+    height: 118px;
+  }
+  .forkio-logo{
+    position: relative;
+  }
+  .logo-text{
+    display: block;
+    position: absolute;
+    font-family: $paragraph-font;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 16px;
+    color: $pink;
+    text-transform: uppercase;
+    left: 79px;
+    top: 35px;
+  }
+  .logo-wrapper{
+    position: relative;
+  }
+  .burger-menu{
+    display: block;
+  }
+  .header-list{
+    display: flex;
+    justify-content: space-around;
+  };
+  .hero-link{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: $pink;
+    padding: 0px;
+  };
+  .header-list {
+    background: transparent;
+    position: relative;
+    bottom: 14px;
+    li {
+      padding-top: 0px;
+      padding-left: 0px;
+      background: transparent;
+    }
+  }
+  .burger-menu{
+    .wrapper{
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  &:hover .hero-link{
+    &:before{
+      display: none;
+      content: "";
+    }
+  }
+}
+@media (min-width: 993px) {
+    .wrapper{
+      padding-left: 10px;
+      padding-right: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  .hero-menu{
+    width: 100%;
+    background-color: transparent;
+  }
+  .logo-wrapper{
+    position: relative;
+  }
+  .forkio-logo{
+    position: relative;
+    display: block;
+  }
+  //
+  //.logo-text{
+  //  position: absolute;
+  //  left: 0;
+  //}
+  //.forkio-logo{
+  //  position: static;
+  //}
+  .logo-text{
+    display: block;
+    position: absolute;
+    font-family: $paragraph-font;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 16px;
+    color: $pink;
+    text-transform: uppercase;
+    left: 0px;
+    top: 35px;
+  }
+  .header-list{
+    //position: static;//
+    //bottom: 25px;
+    //right: 240px;
+  }
+  //.hero{
+  //  display: flex;
+  //}
+  .test{
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero-link{
+    padding-left: 48px;
+  }
+  }
+

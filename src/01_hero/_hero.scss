@@ -3,21 +3,23 @@
   width: 100%;
   background-color: #27262A;
 }
+.hero{
+  background-image: url('../img/01_hero/img/hero_background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .menu-content{
   display: flex;
   align-items: center;
 }
+.logo-text{
+  display: none;
+}
 .btn{
-  background-color: $btn-color;
   box-sizing: border-box;
-  padding-top: 11px;
-  padding-bottom: 11px;
   border-radius: 40px;
   text-align: center;
-  text-decoration: none;
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-style: normal;
   color: #FFFFFF;
 }
 .btn-buy{
@@ -26,6 +28,10 @@
   padding-left: 11px;
   font-size: 15px;
   line-height: 15px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: $btn-color;
+  font-weight: 700;
 }
 .link{
   text-decoration: none;
@@ -129,31 +135,19 @@
   padding-bottom: 416px;
 }
 .hero__content{
-  background-image: url('../img/01_hero/img/hero_background.jpg');
-  background-position: center;
+  //background-image: url('../img/01_hero/img/hero_background.jpg');
+  //background-position: center;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  //&:after{
-  //  content: 'Unlimited 30-Days Trial Period';
-  //  position: absolute;
-  //  top: 105%;
-  //  left: 50%;
-  //  transform: translateX(-50%);
-  //  font-family: "Montserrat", sans-serif;
-  //  font-style: normal;
-  //  font-weight: normal;
-  //  font-size: 14px;
-  //  line-height: 14px;
-  //  color: #848E97;
-  //}
 }
 .burger-menu{
   z-index: 100;
   position: absolute;
   left: 0;
   right: 0;
+  top: 103px;
 }
 .active{
   display: block;
@@ -198,6 +192,12 @@
   position: absolute;
   top: 100%;
   transform: translateY(-50%);
+  padding-right: 11px;
+  padding-left: 11px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: $btn-color;
+  font-weight: 700;
 }
 .btn-wrapper{
   display: flex;
@@ -206,7 +206,6 @@
 .btn-download__subtext{
   color: #848E97;
   font-size: 30px;
-  //font-size: 14px;
   line-height: 14px;
   position: absolute;
   top: 105%;
@@ -220,3 +219,4 @@
   color: #848E97;
   white-space: nowrap;
 }
+@import "media";

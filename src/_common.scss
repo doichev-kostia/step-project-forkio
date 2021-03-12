@@ -20,3 +20,19 @@ a{
 button{
   outline: none;
 }
+.btn{
+  box-sizing: border-box;
+  border-radius: 40px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #FFFFFF;
+}
+
+@media (min-width: 993px) {
+  .wrapper{
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
