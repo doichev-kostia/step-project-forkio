@@ -9,9 +9,7 @@
   .hero-menu{
     height: 118px;
   }
-  .forkio-logo{
-    position: relative;
-  }
+
   .logo-text{
     display: block;
     position: absolute;
@@ -21,8 +19,8 @@
     line-height: 16px;
     color: $pink;
     text-transform: uppercase;
-    left: 79px;
-    top: 35px;
+    left: 59px;
+    top: 14px;
   }
   .logo-wrapper{
     position: relative;
@@ -42,6 +40,9 @@
     line-height: 18px;
     color: $pink;
     padding: 0px;
+    &:before{
+      display: none;
+    }
   };
   .header-list {
     background: transparent;
@@ -51,18 +52,17 @@
       padding-top: 0px;
       padding-left: 0px;
       background: transparent;
+      .hero-link{
+        &:hover{
+          color: white;
+        }
+      }
     }
   }
   .burger-menu{
     .wrapper{
       max-width: 600px;
       margin: 0 auto;
-    }
-  }
-  &:hover .hero-link{
-    &:before{
-      display: none;
-      content: "";
     }
   }
 }
@@ -84,14 +84,6 @@
     position: relative;
     display: block;
   }
-  //
-  //.logo-text{
-  //  position: absolute;
-  //  left: 0;
-  //}
-  //.forkio-logo{
-  //  position: static;
-  //}
   .logo-text{
     display: block;
     position: absolute;
@@ -101,23 +93,20 @@
     line-height: 16px;
     color: $pink;
     text-transform: uppercase;
-    left: 0px;
-    top: 35px;
+    left: 59px;
+    top: 14px;
+  }
+  .burger-menu{
+    position: static;
   }
   .header-list{
-    //position: static;//
-    //bottom: 25px;
-    //right: 240px;
-  }
-  //.hero{
-  //  display: flex;
-  //}
-  .test{
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    bottom: 30px;
+    right: 19px;
   }
   .hero-link{
     padding-left: 48px;
   }
+
   }
 

@@ -3,10 +3,47 @@
   width: 100%;
   background-color: #27262A;
 }
+.forkio-logo{
+  position: relative;
+  &:hover .logo-img{
+    background-image: url("../img/01_hero/img/hero-logo--hover.png");
+  }
+  &:hover .logo-text{
+    color: white;
+  }
+}
+.btn{
+  &:hover{
+    color: $pink;
+    background-color: #FFFFFF;
+    border: 1px solid $pink;
+  }
+}
+btn-download{
+  &:hover{
+    border: 2px solid $pink;
+  }
+}
+.logo-img{
+  width: 43px;
+  height: 41px;
+  background-image: url("../img/01_hero/img/hero_logo.png");
+}
 .hero{
   background-image: url('../img/01_hero/img/hero_background.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -50;
+    background: linear-gradient(90deg, #000000 0%, #1f0f0f 31%, #1f0f0f 65%, #000000 100%);
+  }
 }
 .menu-content{
   display: flex;
@@ -43,6 +80,9 @@
   font-size: 26px;
   line-height: 26px;
   color: black;
+  &:hover{
+    color: #FFFFFF;
+  }
 }
 .hero__body{
   display: flex;
@@ -58,8 +98,9 @@
 }
 .hero__burger{
   width: 26px;
+  height: 26px;
   position: relative;
-  bottom: 5px;
+  top: 5px;
   cursor: pointer;
   &:before{
     content: "";
@@ -135,8 +176,6 @@
   padding-bottom: 416px;
 }
 .hero__content{
-  //background-image: url('../img/01_hero/img/hero_background.jpg');
-  //background-position: center;
   position: relative;
   display: flex;
   flex-direction: column;
