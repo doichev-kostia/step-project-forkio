@@ -22,17 +22,14 @@
     line-height: 42px;
     color: #FFFFFF;
   }
-
-  &__offers{
-  }
 }
+
 
 .pricing-plan{
 
   &__item{
-    min-width: 257px;
-    margin-top: 9px;
-    margin-bottom: 9px;
+    width: 257px;
+    margin: 9px auto 9px;
     box-sizing: border-box;
     background-color: rgba(255,255,255,0.06);
   }
@@ -55,7 +52,6 @@
     font-size: 60px;
     line-height: 62px;
     @include text-white-center-uppercase;
-
   }
 
   &__period{
@@ -85,7 +81,7 @@
   &__btn{
     margin: 0 auto 0 auto;
     background-color: rgba(255,255,255,0.15);
-    width: 163px;
+    width: 162px;
     font-size: 15px;
     line-height: 15px;
     padding:15px 37px 14px 37px;
@@ -93,6 +89,8 @@
   }
 
   &__item--large{
+    position: relative;
+    max-width: 300px;
     height: 560px;
     background-color: rgba(70,48,72,0.4);
 
@@ -100,6 +98,13 @@
       background-color: rgba(0,0,0,0.11);
       }
 
+    .pricing-plan__btn{
+      padding: 18px 48px;
+      width: 190px;
+      position: absolute;
+      bottom: 47px;
+      left: calc(50% - 95px);
+    }
   }
 }
 
