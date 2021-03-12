@@ -1,0 +1,65 @@
+.features{
+  padding-top: 32px;
+  padding-bottom: 6px;
+
+  &__title{
+    padding-bottom: 36px;
+    font-size: 32px;
+    line-height: 38px;
+    color: $pink;
+  }
+
+  &__advantages{
+    @include flex-column-center;
+    padding-bottom: 44px;
+  }
+
+  &__img {
+    height: 376px;
+    background-image: url("../img/03_features/img/features_code.png") ;
+    background-position: -15px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.feature-overview{
+  @include flex-column-center;
+  margin: 20px 0 20px 0;
+
+  &__img{
+    margin-bottom: 20px;
+    min-width: 111px;
+
+    img{
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    &--right{
+      position: relative;
+      left: 13px;
+    }
+  }
+
+  &__description{
+    @include flex-column-center;
+  }
+
+  &__title{
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 14px;
+    color: $black;
+  }
+
+  &__text{
+    text-align: center;
+    font-size: 14px;
+    line-height: 21px;
+    color: $grey;
+  }
+}
+
+@import "media";
