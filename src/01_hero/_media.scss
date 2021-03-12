@@ -27,14 +27,13 @@
   }
   .burger-menu{
     display: block;
+    right: 0;
   }
   .header-list{
     display: flex;
     justify-content: space-around;
   };
   .hero-link{
-    font-family: Montserrat;
-    font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 18px;

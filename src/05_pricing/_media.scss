@@ -56,13 +56,22 @@
       padding-bottom: 61px;
     }
 
+  }
+
+
+}
+
+// to beatify the transition of blocks
+
+@media (min-width: 1093px) {
+  .pricing{
+
     &__offers{
       max-width: 1120px;
       grid-gap: 0px 15px;
 
     }
   }
-
 
   .pricing-plan{
 
