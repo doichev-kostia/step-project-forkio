@@ -6,7 +6,7 @@ navBurger.addEventListener("click", event =>{
 });
 
 document.body.addEventListener('click', function (event){
-    if (!(event.target.classList.contains("active"))){
+    if (!(event.target.classList.contains("active")) && !(event.target.classList.contains("list__item"))){
         navBurger.classList.remove("active");
         navList.classList.remove("active");
     }

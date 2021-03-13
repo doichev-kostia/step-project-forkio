@@ -1,4 +1,4 @@
-@media (min-width: 481px ) {
+@media (min-width: $tablet ) {
   .features{
     padding-top: 61px;
     padding-bottom: 20px;
@@ -59,8 +59,7 @@
 
 
 
-
-@media (min-width: 993px) {
+@media (min-width: $min-desktop) {
   .features{
     position: relative;
 
@@ -101,9 +100,4 @@
     }
 
   }
-
-
-
-
-
 }
