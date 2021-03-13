@@ -1,0 +1,115 @@
+.testimonials{
+  background-image: url('../img/04_testimonials/img/testimonials__background.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__background{
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -50;
+      background: linear-gradient(to bottom, #4a384d, #49394a);
+    }
+  }
+
+  &__title{
+    font-size: 36px;
+    line-height: 48px;
+    color: #FFFFFF;
+    padding-top: 57px;
+    padding-bottom: 53px;
+  }
+
+  &__afterword{
+    font-family: $paragraph-font;
+    font-size: 14px;
+    line-height: 21px;
+    color: #A291A5;
+    position: relative;
+    padding-bottom: 22px;
+
+    &:after{
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: #645766;
+      left: 0;
+      right: 0;
+      bottom: 0px;
+    }
+  }
+}
+
+.logo__smashing{
+  background-image: url('../img/04_testimonials/img/smashing-logo.png');
+  background-repeat: no-repeat;
+  min-width: 165px;
+  height: 43px;
+  padding-bottom: 33px;
+}
+
+.logo__codrops{
+  background-image: url('../img/04_testimonials/img/codrops-logo.png');
+  background-repeat: no-repeat;
+  min-width: 148px;
+  height: 50px;
+  padding-bottom: 29px;
+}
+
+.logo__w{
+  background-image: url('../img/04_testimonials/img/w-logo.png');
+  background-repeat: no-repeat;
+  min-width: 64px;
+  height: 64px;
+  padding-bottom: 22px;
+}
+
+.logo__pixel{
+  background-image: url('../img/04_testimonials/img/pixel-buddha-logo.png');
+  background-repeat: no-repeat;
+  min-width: 225px;
+  height: 24px;
+  padding-bottom: 33px;
+}
+
+.logo__creative{
+  background-image: url('../img/04_testimonials/img/creative-bloq-logo.png');
+  background-repeat: no-repeat;
+  min-width: 166px;
+  height: 34px;
+  padding-bottom: 28px;
+}
+
+.logo__tnw{
+  background-image: url('../img/04_testimonials/img/tnw-logo.png');
+  background-repeat: no-repeat;
+  min-width: 108px;
+  height: 34px;
+  padding-bottom: 24px;
+}
+.references{
+  &__item__description{
+    font-family: $paragraph-font;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
+
+  &__item{
+    @include flex-column-center;
+    justify-content: center;
+    min-width: 280px;
+    margin: 0 auto;
+    padding-bottom: 45px;
+  }
+}
+
+@import "media";

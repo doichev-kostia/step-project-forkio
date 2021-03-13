@@ -1,4 +1,4 @@
-@media  (min-width: 481px){
+@media  (min-width: $tablet){
   .hero__burger{
     display: none;
   }
@@ -33,6 +33,12 @@
     display: flex;
     justify-content: space-around;
   };
+
+  .burger-menu {
+    right: 0px;
+    transition: all 0s ease;
+  }
+
   .hero-link{
     font-weight: bold;
     font-size: 16px;
@@ -65,7 +71,7 @@
     }
   }
 }
-@media (min-width: 993px) {
+@media (min-width: $min-desktop) {
     .wrapper{
       padding-left: 10px;
       padding-right: 10px;

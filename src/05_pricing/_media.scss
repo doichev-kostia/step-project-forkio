@@ -1,4 +1,4 @@
-@media (min-width: 481px ) {
+@media (min-width: $tablet) {
   .pricing{
     padding-top: 88px;
     padding-bottom: 23px;
@@ -45,7 +45,7 @@
 
 
 
-@media (min-width: 993px) {
+@media (min-width: $min-desktop) {
   .pricing{
     padding-bottom: 67px;
 

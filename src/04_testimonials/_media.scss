@@ -1,0 +1,78 @@
+@media (min-width: $tablet) {
+  .testimonials {
+    &__title {
+      font-size: 42px;
+      line-height: 44px;
+      padding-bottom: 88.09px;
+    }
+
+    &__afterword {
+      grid-area: afterword;
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        max-width: 555px;
+        background: #645766;
+        left: 50%;
+        transform: translateX(-50%);
+        right: 0;
+        bottom: 0px;
+      }
+    }
+
+    .references {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: baseline;
+      justify-items: center;
+      grid-template-areas:
+    "item1 item2"
+    "item3 item4"
+    "item5 item6"
+    "afterword afterword";
+      grid-gap: 30px;
+      &__item {
+        min-width: auto;
+      }
+    }
+  }
+
+  .item1 {
+    grid-area: item1;
+  }
+  .item2 {
+    grid-area: item2;
+  }
+  .item3 {
+    grid-area: item3;
+  }
+  .item4 {
+    grid-area: item4;
+  }
+  .item5 {
+    grid-area: item5;
+  }
+  .item6 {
+    grid-area: item6;
+  }
+}
+
+@media (min-width: $min-desktop) {
+  .testimonials {
+
+    &__title {
+      font-size: 48px;
+      line-height: 50px;
+    }
+    .references {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "afterword afterword afterword";
+    }
+  }
+}
+

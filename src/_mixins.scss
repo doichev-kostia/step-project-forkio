@@ -9,3 +9,18 @@
   text-transform: uppercase;
   color: #FFFFFF;
 }
+
+@mixin flex-center-space-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin burger-menu-lines{
+  width: 26px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease 0s;
+}

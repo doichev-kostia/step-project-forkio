@@ -37,11 +37,8 @@ button{
   color: #FFFFFF;
 }
 
-@media (min-width: 481px ) {
 
-}
-
-@media (min-width: 993px) {
+@media (min-width: $min-desktop) {
   .wrapper{
     max-width: 1200px;
     padding-right: 10px;
