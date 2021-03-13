@@ -1,0 +1,111 @@
+@media  (min-width: 481px){
+  .hero__burger{
+    display: none;
+  }
+  .hero__body{
+    padding-top: 22px;
+    justify-content: space-between;
+  }
+  .hero-menu{
+    height: 118px;
+  }
+
+  .logo-text{
+    display: block;
+    position: absolute;
+    font-family: $paragraph-font;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 16px;
+    color: $violet;
+    text-transform: uppercase;
+    left: 59px;
+    top: 14px;
+  }
+  .logo-wrapper{
+    position: relative;
+  }
+  .burger-menu{
+    display: block;
+    right: 0;
+  }
+  .header-list{
+    display: flex;
+    justify-content: space-around;
+  };
+  .hero-link{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: $violet;
+    padding: 0px;
+    &:before{
+      display: none;
+    }
+  };
+  .header-list {
+    background: transparent;
+    position: relative;
+    bottom: 14px;
+    li {
+      padding-top: 0px;
+      padding-left: 0px;
+      background: transparent;
+      .hero-link{
+        &:hover{
+          color: white;
+        }
+      }
+    }
+  }
+  .burger-menu{
+    .wrapper{
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+@media (min-width: 993px) {
+    .wrapper{
+      padding-left: 10px;
+      padding-right: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  .hero-menu{
+    width: 100%;
+    background-color: transparent;
+  }
+  .logo-wrapper{
+    position: relative;
+  }
+  .forkio-logo{
+    position: relative;
+    display: block;
+  }
+  .logo-text{
+    display: block;
+    position: absolute;
+    font-family: $paragraph-font;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 16px;
+    color: $violet;
+    text-transform: uppercase;
+    left: 59px;
+    top: 14px;
+  }
+  .burger-menu{
+    position: static;
+  }
+  .header-list{
+    position: relative;
+    bottom: 30px;
+    right: 19px;
+  }
+  .hero-link{
+    padding-left: 48px;
+  }
+
+  }
+

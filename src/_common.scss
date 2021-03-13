@@ -17,6 +17,12 @@ a{
   text-decoration: none;
 }
 
+li{
+  list-style: none;
+}
+.link{
+  font-family: $links-font;
+}
 button{
   outline: none;
 }
@@ -43,3 +49,4 @@ button{
     margin: 0 auto;
   }
 }
+
