@@ -10,8 +10,8 @@ Technologies used in the project:
 
 Team:
 
-- Kostia Doichev https://github.com/doichev-kostia
-- Anton Molchanov https://github.com/AntonMolchanov
+- [Kostia Doichev](https://github.com/doichev-kostia)
+- [Anton Molchanov](https://github.com/AntonMolchanov)
 
 Responsibilities:
 
